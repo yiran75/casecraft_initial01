@@ -1,0 +1,16 @@
+# Environment and local storage
+config/google_client_secret.json
+config/credentials.json
+storage/uploads/*
+!storage/uploads/.gitkeep
+storage/sessions/*
+!storage/sessions/.gitkeep
+storage/logs/*
+!storage/logs/.gitkeep
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
