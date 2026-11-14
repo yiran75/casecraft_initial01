@@ -1,0 +1,37 @@
+# CaseCraft – AI Collaboration Log & Academic Integrity Record
+
+This document records the interaction between the student and AI tools utilized during the design, implementation, and documentation of **CaseCraft – Investigation Case Management Web Application**.
+
+---
+
+## 1. AI Tools & Models Utilized
+- **AI Coding Assistant:** Google DeepMind Agentic Assistant (Antigravity)
+- **Primary Tasks Assisted by AI:**
+  1. Initial architecture, folder structure design, and schema design.
+  2. Generation of SQL DDL (`database/schema.sql`) and fictional realistic seed records (`database/seed.sql`).
+  3. Writing the MVC scaffolding, PDO prepared statement models, and CSRF / Authentication services.
+  4. Building responsive Bootstrap 5 views with dark navy and teal palette.
+  5. Generating Chart.js integrations and Fetch API AJAX endpoints.
+
+---
+
+## 2. Student Review & Personal Verification
+The student personally performed the following audits and verification steps:
+- **Database Import & Schema Verification:** Imported `schema.sql` and `seed.sql` into local MySQL / phpMyAdmin and verified foreign key cascading rules.
+- **Security Check:** Manually verified that all SQL queries use parameterized PDO bindings and confirmed that password hashes utilize BCRYPT.
+- **Permission & Role Testing:** Verified that `reviewer` accounts cannot alter case files or post evidence, and confirmed that only `admin` can access the `/admin/*` directory.
+- **File Upload Safety:** Tested file uploading with valid PDFs and verified that disallowed executable files are safely rejected.
+
+---
+
+## 3. Student-Implemented Feature (Without AI Assistance)
+> **Academic Integrity Notice:** The section below is reserved exclusively for the student to document the specific component or feature implemented entirely independently, without AI assistance, according to course policy.
+
+### Feature Name:
+*[To be filled by student: e.g. Custom Case Status Filter / Additional CSV Field / Specific Form Validation Rule]*
+
+### Description & Source Code File:
+*[Specify file path, lines of code, and detailed description of the logic personally written by the student]*
+
+### What I Learned & Challenges Overcome:
+*[Student personal reflection on debugging and implementing this feature]*
