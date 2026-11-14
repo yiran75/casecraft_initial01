@@ -1,0 +1,275 @@
+/**
+ * CaseCraft - Cyber Forensics & Investigation HUD Theme
+ * Suspense / Cyberpunk High-End UI Stylesheet
+ */
+
+:root {
+    --cyber-black: #030712;
+    --cyber-dark: #070d1e;
+    --cyber-card: rgba(11, 20, 43, 0.75);
+    --cyber-card-hover: rgba(16, 29, 64, 0.9);
+    --cyber-border: rgba(0, 245, 212, 0.2);
+    --cyber-border-glow: 0 0 15px rgba(0, 245, 212, 0.25);
+    --neon-cyan: #00f5d4;
+    --neon-blue: #00b4d8;
+    --neon-purple: #7b2cbf;
+    --neon-amber: #ffb703;
+    --neon-red: #ff0054;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+}
+
+/* Background Cyber Grid */
+body {
+    background-color: var(--cyber-black) !important;
+    color: var(--text-primary) !important;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(0, 180, 216, 0.12) 0%, transparent 60%),
+        linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px) !important;
+    background-size: 100% 100%, 40px 40px, 40px 40px !important;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Scanline Overlay (Suspense Effect) */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.35;
+}
+
+/* High-Tech Glow Cards */
+.card-custom, .auth-card {
+    background: var(--cyber-card) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--cyber-border) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 0 1px 1px rgba(0, 245, 212, 0.1) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+}
+
+.card-custom:hover {
+    border-color: rgba(0, 245, 212, 0.45) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7), var(--cyber-border-glow) !important;
+    transform: translateY(-2px);
+}
+
+/* Glowing Cyber Buttons */
+.btn-teal, .btn-cyber {
+    background: linear-gradient(135deg, #00b4d8 0%, #00f5d4 100%) !important;
+    color: #030712 !important;
+    font-weight: 700 !important;
+    border: none !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.3) !important;
+    transition: all 0.25s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-teal:hover, .btn-cyber:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.6) !important;
+    color: #000000 !important;
+}
+
+.btn-outline-cyber {
+    border: 1px solid var(--neon-cyan) !important;
+    color: var(--neon-cyan) !important;
+    background: rgba(0, 245, 212, 0.05) !important;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-cyber:hover {
+    background: var(--neon-cyan) !important;
+    color: #030712 !important;
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+}
+
+/* Neon Glow Accents */
+.text-cyber-glow {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 245, 212, 0.6), 0 0 20px rgba(0, 245, 212, 0.3);
+}
+
+.text-cyber-amber {
+    color: var(--neon-amber);
+    text-shadow: 0 0 10px rgba(255, 183, 3, 0.5);
+}
+
+.text-cyber-red {
+    color: var(--neon-red);
+    text-shadow: 0 0 10px rgba(255, 0, 84, 0.5);
+}
+
+/* Form inputs cyber styling */
+.form-control, .form-select {
+    background-color: rgba(3, 7, 18, 0.8) !important;
+    border: 1px solid rgba(0, 245, 212, 0.2) !important;
+    color: #f8fafc !important;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--neon-cyan) !important;
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.35) !important;
+    background-color: rgba(7, 13, 30, 0.95) !important;
+}
+
+/* Google Sign In Cyber Button */
+.btn-google {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-google:hover {
+    background-color: #f9fafb !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Biometric Scanner UI */
+.biometric-scanner-box {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(0, 245, 212, 0.4);
+    border-radius: 20px;
+    background: rgba(0, 245, 212, 0.05);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.biometric-scanner-box:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 245, 212, 0.35);
+}
+
+.biometric-laser {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00f5d4, transparent);
+    box-shadow: 0 0 12px #00f5d4;
+    top: 0;
+    left: 0;
+    display: none;
+    animation: scanLaser 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes scanLaser {
+    0% { top: 5%; }
+    100% { top: 92%; }
+}
+
+/* Face ID Matrix HUD Grid Overlay */
+.face-id-mesh {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        radial-gradient(circle, rgba(0, 245, 212, 0.2) 20%, transparent 20%),
+        radial-gradient(circle, rgba(0, 245, 212, 0.2) 20%, transparent 20%);
+    background-size: 15px 15px;
+    background-position: 0 0, 7.5px 7.5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Radar Animation (HUD Dashboard) */
+.hud-radar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 245, 212, 0.3);
+    position: relative;
+    background: radial-gradient(circle, rgba(0, 245, 212, 0.1) 0%, transparent 70%);
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.hud-radar::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    background: conic-gradient(from 0deg, rgba(0, 245, 212, 0.4) 0deg, transparent 60deg, transparent 360deg);
+    transform-origin: top left;
+    animation: radarSweep 3s linear infinite;
+}
+
+.hud-radar::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px; height: 8px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+@keyframes radarSweep {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Blinking terminal cursor */
+.terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--neon-cyan);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Audio Mute/Unmute Pill */
+.audio-toggle-pill {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    background: rgba(11, 20, 43, 0.85);
+    border: 1px solid var(--cyber-border);
+    backdrop-filter: blur(8px);
+    color: var(--neon-cyan);
+    border-radius: 50rem;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
+}
+
+.audio-toggle-pill:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 245, 212, 0.4);
+}
